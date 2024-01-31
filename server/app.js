@@ -28,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", paymentRouter);
 
 app.use(express.static(path.join(__dirname, "../client/build")));
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve("../client/build/index.html"));
 });
