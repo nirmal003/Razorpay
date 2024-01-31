@@ -23,5 +23,5 @@ app.use("/api", paymentRouter);
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve("../client/build/index.html"));
+  res.sendFile(path.resolve("../client/public/index.html"));
 });
