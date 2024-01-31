@@ -15,7 +15,13 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   config({ path: "./server/config/config.env" });
 }
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://razorpay-769f.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
