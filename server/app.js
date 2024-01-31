@@ -30,6 +30,6 @@ app.use("/api", paymentRouter);
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join("../client/build/index.html"));
-  // res.sendFile("index.html", { root: path.join(__dirname, "../public") });
+  // res.sendFile(path.join("../client/build/index.html"));
+  res.sendFile("index.html", { root: path.join(__dirname, "../client/build") });
 });
