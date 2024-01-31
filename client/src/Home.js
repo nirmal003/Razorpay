@@ -7,11 +7,11 @@ const Home = () => {
   const checkoutHandler = async (amount) => {
     const {
       data: { key },
-    } = await axios.get("http://localhost:4000/api/getkey");
+    } = await axios.get("https://razorpay-wheat.vercel.app/api/getkey");
 
     const {
       data: { order },
-    } = await axios.post("http://localhost:4000/api/checkout", {
+    } = await axios.post("https://razorpay-wheat.vercel.app/api/checkout", {
       amount,
     });
 
@@ -23,7 +23,7 @@ const Home = () => {
       description: "Test Transaction",
       image: "https://example.com/your_logo",
       order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the previous step
-      callback_url: "http://localhost:4000/api/paymentverification",
+      callback_url: "https://razorpay-wheat.vercel.app/api/paymentverification",
       prefill: {
         name: "Gaurav Kumar",
         email: "gaurav.kumar@example.com",
