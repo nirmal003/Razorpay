@@ -2,10 +2,10 @@
   "name": "razorpay",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/index.js"
   },
   "author": "",
   "license": "ISC",

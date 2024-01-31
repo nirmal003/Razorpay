@@ -1,6 +1,6 @@
 import crypto from "crypto";
+import { instance } from "../index.js";
 import { Payment } from "../models/paymentModel.js";
-import { instance } from "../server.js";
 
 export const getKey = async (req, res) => {
   const key = process.env.RAZORPAY_API_KEY;
