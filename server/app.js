@@ -32,9 +32,13 @@ app.use("/api", paymentRouter);
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.get("*", (req, res) => {
+app.get("/u", (req, res) => {
   console.log(req.ipInfo);
   res.send(`${req.ipInfo}`);
 
   // res.sendFile(path.join("../client/build/index.html"));
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join("../client/build/index.html"));
 });
