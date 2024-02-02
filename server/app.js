@@ -34,5 +34,7 @@ app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
   console.log(req.ipInfo);
-  res.sendFile(path.join("../client/build/index.html"));
+  res.send(`${req.ipInfo}`);
+
+  // res.sendFile(path.join("../client/build/index.html"));
 });
