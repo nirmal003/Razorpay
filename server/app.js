@@ -1,6 +1,7 @@
 import cors from "cors";
 import { config } from "dotenv";
 import express from "express";
+import expressIp from "express-ip";
 import path from "path";
 import { fileURLToPath } from "url";
 import paymentRouter from "./routes/paymentRoute.js";
@@ -22,13 +23,16 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(expressIp().getIpInfoMiddleware);
 
 app.use("/api", paymentRouter);
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
+  console.log(req.ipInfo);
   res.sendFile(path.join("../client/build/index.html"));
 });
