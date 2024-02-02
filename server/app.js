@@ -30,7 +30,7 @@ app.use(expressIp().getIpInfoMiddleware);
 
 app.use("/api", paymentRouter);
 
-app.use(express.static(path.join(__dirname, "../client/build")));
+// app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("/u", (req, res) => {
   console.log(req.ipInfo);
@@ -39,6 +39,6 @@ app.get("/u", (req, res) => {
   // res.sendFile(path.join("../client/build/index.html"));
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join("../client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join("../client/build/index.html"));
+// });
